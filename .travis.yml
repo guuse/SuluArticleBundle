@@ -16,12 +16,11 @@ cache:
 
 matrix:
   include:
-    - php: 5.5
+    - php: 7.1
       env:
         - COMPOSER_FLAGS="--prefer-lowest --prefer-dist --no-interaction -vvv"
         - ES_VERSION="2.4.4"
         - ES_DOWNLOAD_URL="https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-${ES_VERSION}.zip"
-        - ENABLE_SWAP=true
     - php: 7.3
       env:
         - COMPOSER_FLAGS="--prefer-dist --no-interaction"
