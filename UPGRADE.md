@@ -1,5 +1,11 @@
 # Upgrade
 
+## dev-develop
+
+### ElasticSearchFieldDescriptor constructor changed
+
+The ElasticSearchFieldDescriptor changed see FieldDescriptor update in the UPGRADE.md of sulu/sulu.
+
 ## 1.0.0
 
 ### Localized webspace settings
