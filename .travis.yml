@@ -45,6 +45,19 @@ install:
   - if [[ $PHPSTAN == 'true' ]]; then travis_retry composer require --dev phpstan/phpstan --no-update $COMPOSER_FLAGS ; fi
   - travis_retry composer update $COMPOSER_FLAGS
   - composer info -i
+  - java -version
+  - |
+    if [[ $SYMFONY__PHPCR__TRANSPORT = jackrabbit ]]; then
+        if [ ! -f downloads/jackrabbit-standalone-$JACKRABBIT_VERSION.jar ]; then
+            cd downloads
+            wget http://archive.apache.org/dist/jackrabbit/$JACKRABBIT_VERSION/jackrabbit-standalone-$JACKRABBIT_VERSION.jar
+            cd -
+        fi
+        java -jar downloads/jackrabbit-standalone-$JACKRABBIT_VERSION.jar > /dev/null &
+    fi
+  - curl -L -o elasticsearch.zip ${ES_DOWNLOAD_URL}
+  - unzip elasticsearch.zip
+  - ./elasticsearch-*/bin/elasticsearch -d
   - ./Tests/app/console doctrine:database:create
   - ./Tests/app/console doctrine:schema:update --force
   - ./Tests/app/console sulu:document:initialize
