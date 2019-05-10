@@ -1,5 +1,6 @@
 # Upgrade
 
+<<<<<<< HEAD
 ## 1.1.0
 
 ### Elasticsearch 2.0 and PHP 5.5 support dropped
@@ -13,6 +14,13 @@ Elasticsearch types in the same index is not longer supported by Elasticsearch.
 
 When you UPGRADE from ES2 to ES5/ES6 have a look at the new
 [ongr_elasticsearch](Resources/doc/installation.md) configuration.
+=======
+## 1.0.1
+
+New security-contexts have been created per article type.
+This means permission for articles need to be re-set.
+
+>>>>>>> Update UPGRADE.md
 
 ## 1.0.0
 
